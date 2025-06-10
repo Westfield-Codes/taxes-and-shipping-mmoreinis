@@ -41,8 +41,8 @@ function checkout() {
     document.getElementById("order-summary").style.display = "block";
     document.getElementById("summary").textContent = "Your subtotal is $" + subtotal.toFixed(2) + ".";
     let tax = calcTax(subtotal);
-    let dimWeights = findDimWeights(cart);
-    let shipping = calcShipping(cart, dimWeight);  
+    let dimWeights = calcDimWeights(cart);
+    let shipping = calcShipping(dimWeights);  
     let grand = calcGrandTotal(subtotal, tax, shipping);
     document.getElementById("tax").textContent = "Tax: $" + tax.toFixed(2);
     document.getElementById("shipping").textContent = "Shipping: $" + shipping.toFixed(2);
@@ -85,10 +85,10 @@ function calcDimWeights(cart){
  * We will be shipping within Zone 1, Advantage, via USPS so rate is $7.60 per DIMweight according to
  * https://www.pitneybowes.com/us/blog/usps-shipping-rates-increase-2023.html.  So: Loop over each dimWeight, 
  * multiply by $7.60 and add that to total shipping. 
- * @param: cart, dimWeights arrays
+ * @param: dimWeights array
  * @return: totalShipping
  */
-function calcShipping(cart, dimWeight) {
+function calcShipping(dimWeights) {
 
 }
 
