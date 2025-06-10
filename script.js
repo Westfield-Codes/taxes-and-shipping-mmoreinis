@@ -41,7 +41,7 @@ function checkout() {
     document.getElementById("order-summary").style.display = "block";
     document.getElementById("summary").textContent = "Your subtotal is $" + subtotal.toFixed(2) + ".";
     let tax = calcTax(subtotal);
-    let dimWeight = findDimWeights(cart);
+    let dimWeights = findDimWeights(cart);
     let shipping = calcShipping(cart, dimWeight);  
     let grand = calcGrandTotal(subtotal, tax, shipping);
     document.getElementById("tax").textContent = "Tax: $" + tax.toFixed(2);
@@ -67,9 +67,17 @@ function updateCart() {
     document.getElementById("total-price").textContent = "Total: $" + totalPrice.toFixed(2);
 }
 
-/* Populate Dimweight ()
+/* calcDimWeights(cart)
+ * For each product, calculate the dimensional weight from user inputs. 
+ * The user is asked whether to provide dimensions (length, width, height) or volume
+ * (liters). Gallons are 3.7854 liters. One litre is 61.0237 cubic inches. For each value in
+ * Cubic inches, divide by 139 to get the dimweight and add that to the dimWeights array.  
+ */
+calcDimWeights(cart){
+    return dimWeights;
+}
 
-/*  (cart, dimWeight)
+/* calcShipping(cart, dimWeight)
  * Obtain the dimensional weight for each item in the cart from the dimWeight array to 
  * calculate total UPS shipping (dimensional weight / 139). 
 function calcShipping(cart, dimWeight) {
