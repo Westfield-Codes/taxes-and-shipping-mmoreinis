@@ -8,9 +8,9 @@ function setup() {
 // Initialize an empty cart
 let cart = [];
 const prices = {
-    cage: 50,
-    food: 10,
-    bedding: 5
+    cage: 41.32,
+    food: 15.19,
+    bedding: 11.69
 };
 
 // Function to add items to the cart
@@ -41,7 +41,8 @@ function checkout() {
     document.getElementById("order-summary").style.display = "block";
     document.getElementById("summary").textContent = "Your subtotal is $" + subtotal.toFixed(2) + ".";
     let tax = calcTax(subtotal);
-    let shipping = calcShipping(subtotal);  
+    let dimWeight = findDimWeights(cart);
+    let shipping = calcShipping(cart, dimWeight);  
     let grand = calcGrandTotal(subtotal, tax, shipping);
     document.getElementById("tax").textContent = "Tax: $" + tax.toFixed(2);
     document.getElementById("shipping").textContent = "Shipping: $" + shipping.toFixed(2);
@@ -66,12 +67,13 @@ function updateCart() {
     document.getElementById("total-price").textContent = "Total: $" + totalPrice.toFixed(2);
 }
 
-// Calculate UPS Shipping
-function calcShipping(total) {
-    if (total > 100) {
-        return 0; // Free shipping for orders over $100
-    }
-    return 10; // Standard shipping fee
+/* Populate Dimweight ()
+
+/*  (cart, dimWeight)
+ * Obtain the dimensional weight for each item in the cart from the dimWeight array to 
+ * calculate total UPS shipping (dimensional weight / 139). 
+function calcShipping(cart, dimWeight) {
+
 }
 
 // Calculate Tax
