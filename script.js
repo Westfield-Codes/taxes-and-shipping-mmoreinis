@@ -67,11 +67,15 @@ function updateCart() {
     document.getElementById("total-price").textContent = "Total: $" + totalPrice.toFixed(2);
 }
 
-/* calcDimWeights(cart)
- * For each product, calculate the dimensional weight from user inputs. 
- * The user is asked whether to provide dimensions (length, width, height) or volume
- * (liters). Gallons are 3.7854 liters. One litre is 61.0237 cubic inches. For each value in
- * Cubic inches, divide by 139 to get the dimweight and add that to the dimWeights array.  
+/* calcDimWeights(cart): Go through each item in the cart and calculate shipping. 
+ * Loop for each, calculate the dimensional weight from user inputs. 
+ * Within the loop, ask the user whether they have dimensions (length, width, height) or volume (liters or gallons)
+ * Gallons are 3.7854 liters. One litre is 61.0237 cubic inches. 
+ * For each value in Cubic inches, divide by 139 to get the dimensional weight (dimWeight).
+ * Ask the user whether they have ounces or pounds for weight.  Convert ounces to pounds (16:1)
+ * Compare dimWeight and weight. Whichever one is larger, push to the dimWeights array and return that. 
+ * @param: cart
+ * @return: dimWeights array
  */
 calcDimWeights(cart){
     return dimWeights;
