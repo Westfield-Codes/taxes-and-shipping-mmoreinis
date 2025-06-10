@@ -1,11 +1,40 @@
-<!-- Don't touch this! -->
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Program Name</title>
+    <title>Pet Store Order Form</title>
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <button onClick="main();">Call main()</button>
-    <script src="script.js"></script>
+  
+  <body onload="setup()">
+    <h1>Guinea Pig Supplies</h1>
+    <div class="store">
+        <div id="order-form">
+          <input id="quantity" type="number" placeholder="Number" min="1" max="100">
+          <select id="product">
+            <option value="cage">Cage</option>
+            <option value="food">Food</option>
+            <option value="bedding">Bedding</option>
+          </select>
+          <button id="add-to-cart">Add to Cart</button>
+          <button id="clear-cart">Clear Cart</button> 
+          <button id="checkout">Checkout</button>
+        </div>
+    </div>
+    <div id="cart">
+      <h2>Cart</h2>
+      <ul id="cart-items"></ul>
+      <p id="total-price">Total: $0.00</p>
+    </div>
+    <div id="order-summary">
+      <h2>Order Summary</h2>
+      <p id="summary"></p>
+      <p id="tax">Tax (6.5%): $0.00</p>
+      <p id="shipping">Shipping: $0.00</p>
+      <p id="grand-total">Grand Total: $0.00</p>
+      <p id="order-status"></p>
+      <button id="confirm-order">Confirm Order</button>
+    </div>
+  <script src="script.js"></script>
   </body>
 </html>
