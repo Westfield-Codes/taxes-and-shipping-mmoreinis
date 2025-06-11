@@ -43,6 +43,7 @@ function checkout() {
     let tax = calcTax(subtotal);
     let dimWeights = calcDimWeights(cart);
     let shipping = calcShipping(dimWeights);  
+    console.log("Grand Total = "+subtotal +" + "+ tax +" + "+shipping);
     let grand = calcGrandTotal(subtotal, tax, shipping);
     document.getElementById("tax").textContent = "Tax: $" + tax.toFixed(2);
     document.getElementById("shipping").textContent = "Shipping: $" + shipping.toFixed(2);
