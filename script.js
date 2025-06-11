@@ -79,7 +79,7 @@ function updateCart() {
  * @return: dimWeights array
  */
 function calcDimWeights(cart){
-    let dimweights = [];
+    let dimWeights = [];
     return dimWeights;
 }
 
@@ -91,7 +91,7 @@ function calcDimWeights(cart){
  * @return: totalShipping
  */
 function calcShipping(dimWeights) {
-    let totalShipping 0;
+    let totalShipping = 0;
     return totalShipping;
 }
 
