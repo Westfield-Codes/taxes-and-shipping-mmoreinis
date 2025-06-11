@@ -19,4 +19,13 @@ You are **creating a shipping calculator** for an online store.
 1. Loop over each item in dimWeights. 
 1. Multiply it by $7.60.
 1. Add that to totalShipping.
-1. Return totalShipping after the loop is done. 
+1. Return totalShipping after the loop is done.
+      
+# Testing: Cart Order #
+Use values from the spreadsheet. 
+1. 1 Cage
+1. 5 Food
+1. 3 Bedding
+1. Checkout
+1. Enter DimWeight Dimensions (popups)
+1. Record Grand Total and submit for Final Exam.  
