@@ -17,7 +17,7 @@ You are **creating a shipping calculator** for an online store.
 **Resources:** Here are the [USPS shipping rates including Advantage](https://www.pitneybowes.com/us/blog/usps-shipping-rates-increase-2023.html).  We will be in Zone 1. 
 **Requirements**: Because we assume Zone 1 and Advantage shipping, there are no user inputs.  Just pull values from the dimWeights array to calculate total shipping.
 1. Loop over each item in dimWeights. 
-1. Multiply it by $7.60.
+1. Multiply it by $1.60.
 1. Add that to totalShipping.
 1. Return totalShipping after the loop is done.
       
