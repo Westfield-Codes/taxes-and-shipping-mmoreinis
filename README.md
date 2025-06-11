@@ -14,10 +14,10 @@ You are **creating a shipping calculator** for an online store.
 1. Once you know cubic inches, get the "dimensional weight" for each by dividing the value by 139.  [Read about that here](https://redstagfulfillment.com/dimensional-weight-calculator/). Your shipping is based on whichever is greater - the dimensional weight or the actual weight in pounds.
   
 ## Function 2 (line 84): Calculate Total Shipping by calculating the shipping cost of each dimWeight.##
-**Resources:** Here are the [USPS shipping rates including Advantage](https://www.pitneybowes.com/us/blog/usps-shipping-rates-increase-2023.html).  We will be in Zone 1. 
+**Resources:**  We will be in Zone 1.  We used [UPS Ground](https://www.ups.com/mobile/quoteService?loc=en_US).
 **Requirements**: Because we assume Zone 1 and Advantage shipping, there are no user inputs.  Just pull values from the dimWeights array to calculate total shipping.
 1. Loop over each item in dimWeights. 
-1. Multiply it by $1.60.
+1. Multiply it by $.80 (this seemed to match UPS Ground shipping)
 1. Add that to totalShipping.
 1. Return totalShipping after the loop is done.
       
