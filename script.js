@@ -78,23 +78,25 @@ function updateCart() {
  * @return: dimWeights array
  */
 function calcDimWeights(cart){
+    let dimweights = [];
     return dimWeights;
 }
 
 /* calcShipping(cart, dimWeights): Go through each item in the cart and calculate shipping from dimWeights. Total that up.  
- * We will be shipping within Zone 1, Advantage, via USPS so rate is $7.60 per DIMweight according to
+ * We will be shipping within Zone 1, Advantage, via USPS so rate is $7.60 per DimWeight according to
  * https://www.pitneybowes.com/us/blog/usps-shipping-rates-increase-2023.html.  So: Loop over each dimWeight, 
  * multiply by $7.60 and add that to total shipping. 
  * @param: dimWeights array
  * @return: totalShipping
  */
 function calcShipping(dimWeights) {
-
+    let totalShipping 0;
+    return totalShipping;
 }
 
 // Calculate Tax
-function calcTax(total) {
-    return total * 0.065;
+function calcTax(subtotal) {
+    return subtotal * 0.065; // MA state tax rate
 }
 
 // Calculate Grand Total
