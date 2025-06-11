@@ -41,6 +41,7 @@ function checkout() {
     document.getElementById("order-summary").style.display = "block";
     document.getElementById("summary").textContent = "Your subtotal is $" + subtotal.toFixed(2) + ".";
     let tax = calcTax(subtotal);
+    cart = extractFrom(cart);
     let dimWeights = calcDimWeights(cart);
     let shipping = calcShipping(dimWeights);  
     console.log("Grand Total = "+subtotal +" + "+ tax +" + "+shipping);
@@ -67,6 +68,20 @@ function updateCart() {
     });
     document.getElementById("total-price").textContent = "Total: $" + totalPrice.toFixed(2);
 }
+
+// Function to extract values array from cart (key:value pairs)
+function extractFrom(cart){
+    let values = [];
+    let nextval = [];
+    cart.forEach(item => {
+        nextval.push(`${item.product}`);
+        nextval.push(`${item.quantity}`);
+        values.push(nextval);
+    });
+    console.log(values.toString());
+    return values;
+}
+
 
 /* calcDimWeights(cart): Go through each item in the cart and calculate dimWeights. 
  * Loop for each, calculate the dimensional weight from user inputs. 
