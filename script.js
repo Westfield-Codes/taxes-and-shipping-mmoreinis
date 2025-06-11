@@ -84,11 +84,8 @@ function extractFrom(cart){
 
 
 /* calcDimWeights(cart): Go through each item in the cart and calculate dimWeights. 
- * Loop for each, calculate the dimensional weight from user inputs. 
- * Within the loop, ask the user whether they have dimensions (length, width, height) or volume (liters or gallons)
- * Gallons are 3.7854 liters. One litre is 61.0237 cubic inches. 
- * For each value in Cubic inches, divide by 139 to get the dimensional weight (dimWeight).
- * Ask the user whether they have ounces or pounds for weight.  Convert ounces to pounds (16:1)
+ * Loop for each, get the volume and weight from user inputs. 
+ * For each value in cubic inches, divide by 139 to get the dimensional weight (dimWeight).
  * Compare dimWeight and weight. Whichever one is larger, push that to the dimWeights array and return that. 
  * @param: cart
  * @return: dimWeights array
@@ -100,7 +97,7 @@ function calcDimWeights(cart){
 
 /* calcShipping(cart, dimWeights): Go through each item in the cart and calculate shipping from dimWeights. Total that up.  
  * We will be shipping within Zone 1, Advantage, via USPS so rate is $1.60 per DimWeight.  So: Loop over each dimWeight, 
- * multiply by $1.60 and add that to total shipping. 
+ * multiply by $.80 and add that to total shipping. 
  * @param: dimWeights array
  * @return: totalShipping
  */
